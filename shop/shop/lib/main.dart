@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:shop/pages/product_details_page.dart';
 import 'package:shop/pages/products_oveview_page.dart';
+import 'package:shop/utils/app_routes.dart';
 
 void main() {
   runApp(const MyApp());
@@ -14,9 +16,17 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        fontFamily: 'Lato',
+        colorScheme: const ColorScheme.light(
+          primary: Colors.purple,
+          secondary: Colors.deepOrange,
+        ),
+        primarySwatch: Colors.purple,
       ),
       home: ProductsOverviewPage(),
+      routes: {
+        AppRoutes.Product_Detail: (context) => const ProductDetailPage(),
+      },
     );
   }
 }
