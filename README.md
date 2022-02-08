@@ -3,6 +3,8 @@
 </h1>
 
 <p align="center">
+ 
+  <img alt="Version" src="https://img.shields.io/badge/status-em%20desenvolvimento-brightgreen">
 
   <img alt="Repository size" src="https://img.shields.io/github/repo-size/AriCamargos/AppShop">
   
@@ -20,4 +22,3 @@
 
   <img alt="License" src="https://img.shields.io/badge/license-MIT-brightgreen">
 </p>
-
