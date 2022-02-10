@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:shop/models/product_list.dart';
 import 'package:shop/pages/product_details_page.dart';
 import 'package:shop/pages/products_oveview_page.dart';
 import 'package:shop/utils/app_routes.dart';
@@ -12,21 +14,26 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        fontFamily: 'Lato',
-        colorScheme: const ColorScheme.light(
-          primary: Colors.purple,
-          secondary: Colors.deepOrange,
+    //Cadastro o Provider na árvore de componentes, onde envolvi meu MaterialApp.
+    return ChangeNotifierProvider(
+      //Retorno o ProductList que é onde está o meu ChangeNotifier
+      create: (_) => ProductList(),
+      child: MaterialApp(
+        debugShowCheckedModeBanner: false,
+        title: 'Flutter Demo',
+        theme: ThemeData(
+          fontFamily: 'Lato',
+          colorScheme: const ColorScheme.light(
+            primary: Colors.purple,
+            secondary: Colors.deepOrange,
+          ),
+          primarySwatch: Colors.purple,
         ),
-        primarySwatch: Colors.purple,
+        home: const ProductsOverviewPage(),
+        routes: {
+          AppRoutes.Product_Detail: (context) => const ProductDetailPage(),
+        },
       ),
-      home: ProductsOverviewPage(),
-      routes: {
-        AppRoutes.Product_Detail: (context) => const ProductDetailPage(),
-      },
     );
   }
 }
