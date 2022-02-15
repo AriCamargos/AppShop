@@ -1,18 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
-import 'package:shop/components/product_item.dart';
-import 'package:shop/models/product.dart';
-import 'package:shop/models/product_list.dart';
+import 'package:shop/components/product_grid.dart';
 
 class ProductsOverviewPage extends StatelessWidget {
   const ProductsOverviewPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    //Informo o provider que quero obter.
-    final provider = Provider.of<ProductList>(context);
-    //Acessando a lista de produtos a partir de notifier
-    final List<Product> loadedProducts = provider.items;
 
     return Scaffold(
       appBar: AppBar(
@@ -20,20 +13,8 @@ class ProductsOverviewPage extends StatelessWidget {
           child: Text('Minha Loja'),
         ),
       ),
-      body: GridView.builder(
-        padding: const EdgeInsets.all(10),
-        //itemCount exibe apenas os elementos da lista
-        itemCount: loadedProducts.length,
-        //Esse grid é fixo, vai mostrar uma lista fixa
-        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-          crossAxisCount: 2,
-          childAspectRatio: 3 / 2,
-          crossAxisSpacing: 10,
-          mainAxisSpacing: 10,
-        ),
-        itemBuilder: (context, index) =>
-            ProductItem(product: loadedProducts[index]),
-      ),
+      body: const ProductGrid(),
     );
   }
 }
+
