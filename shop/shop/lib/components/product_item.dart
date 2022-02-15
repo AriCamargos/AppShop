@@ -9,7 +9,11 @@ class ProductItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     //Estou acessando a lista de produtos pelo meu provider
-    final product = Provider.of<Product>(context);
+    final product = Provider.of<Product>(
+      context,
+      //O false aqui quer dizer que nada será alterado, apenas o que está dentro de Consumer
+      listen: false,
+    );
     return ClipRRect(
       borderRadius: BorderRadius.circular(20),
       child: GridTile(
@@ -32,14 +36,17 @@ class ProductItem extends StatelessWidget {
             product.title,
             textAlign: TextAlign.center,
           ),
-          leading: IconButton(
-              icon: Icon(product.isFavorite
-                  ? Icons.favorite_rounded
-                  : Icons.favorite_border_rounded),
-              onPressed: () {
-                product.toggleFavorite();
-              },
-              color: Theme.of(context).colorScheme.secondary),
+          //Consumer usado apenas para envolver o widget onde irá ocorrer a mudança de estado
+          leading: Consumer<Product>(
+            builder: (context, product, _) => IconButton(
+                icon: Icon(product.isFavorite
+                    ? Icons.favorite_rounded
+                    : Icons.favorite_border_rounded),
+                onPressed: () {
+                  product.toggleFavorite();
+                },
+                color: Theme.of(context).colorScheme.secondary),
+          ),
           trailing: IconButton(
             icon: const Icon(Icons.shopping_cart_rounded),
             onPressed: () {},

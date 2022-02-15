@@ -17,8 +17,8 @@ class ProductGrid extends StatelessWidget {
       padding: const EdgeInsets.all(10),
       //itemCount exibe apenas os elementos da lista
       itemCount: loadedProducts.length,
-      itemBuilder: (context, index) => ChangeNotifierProvider(
-        create: (_) => loadedProducts[index],
+      itemBuilder: (context, index) => ChangeNotifierProvider.value(
+        value: loadedProducts[index],
         child: const ProductItem(),
       ),
       //Esse grid é fixo, vai mostrar uma lista fixa
