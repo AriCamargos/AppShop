@@ -22,3 +22,29 @@
 
   <img alt="License" src="https://img.shields.io/badge/license-MIT-brightgreen">
 </p>
+<p align="center">
+  <a href="#-tecnologias">Tecnologias</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-projeto">Projeto</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-licença">Licença</a>
+</p>
+
+## 🚀 Tecnologias
+
+Esse projeto foi desenvolvido com as seguintes tecnologias:
+
+- Flutter
+- Dart
+
+## 💻 Projeto
+Aplicativo de receitas culinárias com conceitos de Navegação, Classes, Métodos, Funções, conceitos como SOLID e outros Designs Patterns.
+  
+### Imagem da tela de login
+
+<p align="center">
+<img src="https://user-images.githubusercontent.com/86811983/154987183-62c8bf61-3c09-48fa-b3a2-d02fae74b5dc.jpeg"  width="500">
+</p>
+
+
+## 📝 Licença
+
+Esse projeto está sob a licença MIT. Veja o arquivo [LICENSE](https://www.mit.edu/~amini/LICENSE.md) para mais detalhes.
