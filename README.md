@@ -36,9 +36,9 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 - Dart
 
 ## 💻 Projeto
-Aplicativo de receitas culinárias com conceitos de Navegação, Classes, Métodos, Funções, conceitos como SOLID e outros Designs Patterns.
+Esta aplicação consiste no desenvolvimento de um E-commerce aprendido em curso. O intuito desse projeto é a possibilidade em adicionar, remover, incrementar, somar o valor dos produtos adicionados no carrinho de compras, favoritar e deixar esses itens separados na página de favoritos, e ainda ver toda a descrição do produto a ser "comprado". Conceitos mais complexos como o gerenciamento de estado Provider, Mixins, Design Patterns como o Observable, SOLID foram e ainda estão sendo implementados sem contar o trablaho de fixação na implementação de conceitos básicos como os widgets para amostragem na tela. Tenho trabalhado nesse projeto, logo, serão implementados novas funcionalidades e melhorias.
   
-### Imagem da tela de login
+### Imagem do projeto
 
 <p align="center">
 <img src="https://user-images.githubusercontent.com/86811983/154987183-62c8bf61-3c09-48fa-b3a2-d02fae74b5dc.jpeg"  width="500">
