@@ -6,6 +6,24 @@ import 'package:shop/models/product.dart';
 class ProductList with ChangeNotifier {
   //Lista sendo inicalizada
   final List<Product> _items = dummyProducts;
+
+  //Retorno um clone para não acessar diretamente minha lista.
+  List<Product> get items => [..._items];
+  List<Product> get favoriteItems =>
+      _items.where((product) => product.isFavorite).toList();
+
+  //Método de add produto
+  void addProduct(Product product) {
+    //Add um produto, ou seja, vai ter uma mudança.
+    _items.add(product);
+    //Notificando a mudança a minha lista que é a Subject.
+    notifyListeners();
+  }
+}
+
+//Controle de lista de filtro de maneira global
+/* 
+ final List<Product> _items = dummyProducts;
   bool _showFavoriteOnly = false;
 
   //Retorno um clone para não acessar diretamente minha lista.
@@ -24,13 +42,4 @@ class ProductList with ChangeNotifier {
   void showAll() {
     _showFavoriteOnly = false;
     notifyListeners();
-  }
-
-  //Método de add produto
-  void addProduct(Product product) {
-    //Add um produto, ou seja, vai ter uma mudança.
-    _items.add(product);
-    //Notificando a mudança a minha lista que é a Subject.
-    notifyListeners();
-  }
-}
+  } */

@@ -33,7 +33,7 @@ class ProductItem extends StatelessWidget {
         ),
         footer: GridTileBar(
           title: Text(
-            product.title,
+            product.name,
             textAlign: TextAlign.center,
           ),
           //Consumer usado apenas para envolver o widget onde irá ocorrer a mudança de estado
