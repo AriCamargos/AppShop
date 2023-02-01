@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:shop/models/cart.dart';
 import 'package:shop/models/product.dart';
 import 'package:shop/utils/app_routes.dart';
 
@@ -9,11 +10,9 @@ class ProductItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     //Estou acessando a lista de produtos pelo meu provider
-    final product = Provider.of<Product>(
-      context,
-      //O false aqui quer dizer que nada será alterado, apenas o que está dentro de Consumer
-      listen: false,
-    );
+    final product = Provider.of<Product>(context, listen: false);
+    final cart = Provider.of<Cart>(context, listen: false);
+
     return ClipRRect(
       borderRadius: BorderRadius.circular(20),
       child: GridTile(
@@ -49,7 +48,9 @@ class ProductItem extends StatelessWidget {
           ),
           trailing: IconButton(
             icon: const Icon(Icons.shopping_cart_rounded),
-            onPressed: () {},
+            onPressed: () {
+              cart.addItem(product);
+            },
             color: Theme.of(context).colorScheme.secondary,
           ),
           backgroundColor: Colors.black45,
