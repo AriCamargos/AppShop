@@ -3,6 +3,8 @@
 import 'package:flutter/material.dart';
 import 'package:shop/components/product_grid.dart';
 
+import '../components/badge.dart';
+
 enum FilterOptions {
   Favorite,
   All,
@@ -47,6 +49,13 @@ class _ProductsOverviewPageState extends State<ProductsOverviewPage> {
                   print(_showFavoriteOnly);
                 });
               }),
+          BadgeComponent(
+            value: '2',
+            child: (IconButton(
+              onPressed: () {},
+              icon: const Icon(Icons.shopping_cart),
+            )),
+          ),
         ],
         title: const Center(
           child: Text('Minha Loja'),
